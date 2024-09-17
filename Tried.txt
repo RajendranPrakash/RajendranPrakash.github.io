@@ -1,0 +1,41 @@
+
+
+//.college {
+//    font-size: 1.35rem;
+//    font-family: 'Saira Extra Condensed', serif;
+//    font-weight: 500;
+//    text-transform: uppercase;
+//}
+
+
+
+
+.projectDescAndResponsibility {
+  display: none;
+}
+
+.companyPosition {
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.companyPosition.active {
+  transform: scale(1.2);
+}
+
+
+resume.js
+
+  /*$(".companyPosition").click(function(){
+	 $(this).siblings(".projectDescAndResponsibility").toggle();
+  });
+  
+  $(".companyPosition").hover(
+    function() {
+      $(this).addClass("active");
+    },
+    function() {
+      $(this).removeClass("active");
+    }
+  );*/

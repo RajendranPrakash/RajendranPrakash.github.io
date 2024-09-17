@@ -24,5 +24,8 @@
   $('body').scrollspy({
     target: '#sideNav'
   });
-
+  
+  $(".companyPosition").click(function(){
+	 $(this).siblings(".projectDescAndResponsibility").toggle();
+  });
 })(jQuery); // End of use strict
