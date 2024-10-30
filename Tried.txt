@@ -1,3 +1,101 @@
+<div class="projectDescAndResponsibility">
+			  <div class="title">Multiple clients - Kraft, Cofco</div>
+              <div>Description</div>
+			  <ul>
+				<li> Platform facilities for  digital commodity management solutions for trading and risk, supply chain management and financial services driven by cloud </li>
+				<li> Clients can import data for the application through various connectors like third party vendor connection, shared resources, or through FTP </li>
+				<li> Features to deal and control the clients with different roles with different access </li>
+				<li> provides the facility for processing a visualize historical data. </li>
+				<li> Based on the specific timing scheduling feature also available for reloading from source. </li>
+				<li> Export of data to third party API or to customer email. </li>
+			  </ul>
+              <div>Responsibilities</div>
+			  <ul>
+				<li> Implementing new feature for enhancement based on discussion with PDM team. </li>
+				<li> Updating status in Scrum meeting and client discussion. </li>
+				<li> Security and Report generation using API </li>
+				<li> Tracking JIRA issues for bug fixing. </li>
+				<li> Mysql and MongoDB Script preparation based on the requirement. </li>
+				<li> Functionality Unit testing, regression testing and DEV region testing. </li>
+				<li> Patch fixes for QA region Prod region. </li>
+			  </ul>
+			</div>
+			
+			
+			
+
+
+
+
+			<div class="project">
+			  <div class="title">Indiana Farm Bureau Insurance (IFBI), USA</div>
+              <div>Description</div>
+			  <ul>
+				<li> Enterprise Application Product for handling insurance </li>
+				<li> Communicate with mulitple third parties for processing customer information using Social Security Number (SSN)</li>
+				<li> Rapid delivery and approval of a desired insurance product to a customer </li>
+				<li> End-to-End, straight-through processing functionality available </li>
+				<li> Business processing and underwriting users for handling of individual life and group insurance products</li>
+			  </ul>
+              <div>Responsibilities</div>
+			  <ul>
+				<li> Involved in migration process from struts to spring</li>
+				<li> Handling the System interface and vendor interface and provide the release to QA on time.</li>
+				<li> Mapping for Request and Response XML to XSLT using XSD schema.</li>
+				<li> Involved in re-engineering for System interface to connect with the third party services.</li>
+				<li> Tracking JIRA and Bug Zero issues on fixing.</li>
+				<li> Release Management activities like bug status update.</li>
+				<li> Peer code review and Release Management activities like bug status update.</li>
+				<li> Responsible for Unit testing and follow up on UAT and DEV region testing</li>
+			  </ul>
+			</div>
+			
+			
+			<div class="project">
+			  <div class="title">Quoting and Policy System (QPS), Sun Life Financial Inc, USA</div>
+              <div>Description</div>
+			  <ul>
+				<li> Enterprise Application Product for handling insurance. </li>
+				<li> Processing Client information for insurance eligibility. </li>
+				<li> policies also have further processing on client claim details and for approval on the client claim for insurance. </li>
+				<li> Core business holds in Spring technology and front end is exposed by JSF. </li>
+			  </ul>
+              <div>Responsibilities</div>
+			  <ul>
+				<li> Tracking JIRA and Bug Zero issues on fixing.</li>
+				<li> Updating status in Scrum meeting and client discussion.</li>
+				<li> JUnit and Mockito implementation.</li>
+				<li> Responsible for Unit testing.</li>
+			  </ul>
+			</div>
+			
+			
+			<div class="project">
+			  <div class="title">American Family Insurance (AmFam), USA</div>
+              <div>Description</div>
+			  <ul>
+				<li> Enterprise Application Product for handling insurance. </li>
+				<li> Insurance agent to convert all insurance applications which are in paper documents. </li>
+				<li> Data can be imported using services to handle for customer information or using application. </li>
+				<li> Communicate with mulitple third parties for retrieving and processing customer medical information using Social Security Number (SSN) </li>
+				<li> Facilitates in rapid delivery and approval of a desired insurance product to a customer. </li>
+				<li> End-to-End, straight-through processing functionality available </li>
+				<li> Business processing and underwriting users for handling of individual life and group insurance products</li>
+			  </ul>
+              <div>Responsibilities</div>
+			  <ul>
+				<li> Implementation and configuration based on client requirements. </li>
+				<li> Handling System Interface and vendor interface. </li>
+				<li> Mapping for Request and Response XML to XSLT using XSD schema. </li>
+				<li> Creation of bundle for System Interface to connect with the third party services. </li>
+				<li> Involved in writing SQL Queries based on the business requirements. </li>
+				<li> Peer code review and Release Management activities like bug status update. </li>
+				<li> Tracking JIRA and Bug zero issues fixing. </li>
+			  </ul>
+			</div>
+
+
+
 
 
 //.college {
@@ -8,6 +106,18 @@
 //}
 
 
+.companyPosition:hover {
+  box-shadow: 0 0 3px black;
+  margin-top: -10px;
+}
+
+.companyPosition {
+  padding: 1em;
+  //border: 1px solid #b5b5b5;
+  border-radius: 10px;
+  //width: fit-content;
+  transition: 0.5s;
+}
 
 
 .projectDescAndResponsibility {
