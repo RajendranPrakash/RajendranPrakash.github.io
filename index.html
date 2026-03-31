@@ -1,292 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Prakash Rajendran — Warm Earthy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#f7f3ee;--bg2:#efe9e0;--bg3:#e5ddd2;--bg4:#d9cfc2;
-  --text:#2c2015;--text2:#6b5744;--text3:#9e8570;
-  --accent:#b85c38;--accent2:#c97d5a;--accent3:#e8a882;
-  --teal:#3d7a6e;--gold:#c8962c;
-  --rule:#ddd3c5;
-  --serif:'Lora',serif;
-  --sans:'Nunito Sans',sans-serif;
-  --mono:'JetBrains Mono',monospace;
-  --r:10px;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Prakash Rajendran — Technical Lead</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#0a0a0f;--bg2:#111118;--bg3:#1a1a24;--bg4:#22222f;
+            --accent:#6c63ff;--accent2:#9f97ff;--accent3:#c4bfff;
+            --text:#e8e8f0;--text2:#a0a0b8;--text3:#606078;
+            --border:#2a2a3a;--border2:#3a3a50;
+            --teal:#00d4aa;--coral:#ff6b6b;--amber:#ffc14d;
+            --radius:12px;--radius-sm:8px;
+        }
+        html{scroll-behavior:smooth;font-size:16px}
+        body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;overflow-x:hidden}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,243,238,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
-.nav-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 2rem}
-.nav-logo{font-family:var(--serif);font-size:15px;color:var(--text2);font-style:italic}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:13.5px;transition:color .2s}
-.nav-links a:hover{color:var(--accent)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--text2);border-radius:2px}
-.mobile-menu{display:none;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--rule);position:fixed;top:58px;left:0;right:0;z-index:99}
-.mobile-menu.open{display:flex}
-.mobile-menu a{color:var(--text2);text-decoration:none;font-size:14px;padding:13px 2rem;border-bottom:1px solid var(--rule)}
+        /* NAV */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem}
+        .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+        .nav-logo{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--accent2);letter-spacing:0.05em}
+        .nav-links{display:flex;gap:2rem;list-style:none}
+        .nav-links a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:400;transition:color .2s}
+        .nav-links a:hover{color:var(--accent2)}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+        .hamburger span{display:block;width:22px;height:2px;background:var(--text2);border-radius:2px;transition:.3s}
+        .mobile-menu{display:none;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--border);position:fixed;top:60px;left:0;right:0;z-index:99}
+        .mobile-menu.open{display:flex}
+        .mobile-menu a{color:var(--text2);text-decoration:none;font-size:15px;padding:14px 2rem;border-bottom:1px solid var(--border)}
+        .mobile-menu a:hover{color:var(--accent2);background:var(--bg3)}
 
-#hero{padding:120px 2rem 70px;max-width:1060px;margin:0 auto}
-.hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--rule);border-radius:20px;padding:5px 14px;margin-bottom:1.5rem}
-.hero-chip span{font-family:var(--mono);font-size:11px;color:var(--text2);letter-spacing:.06em}
-.hero-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
-h1.hname{font-family:var(--serif);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:400;color:var(--text);line-height:1.08;letter-spacing:-.01em;margin-bottom:.75rem}
-h1.hname span{color:var(--accent);font-style:italic}
-.hrole{font-size:1rem;color:var(--text2);font-weight:300;margin-bottom:1.25rem;letter-spacing:.02em}
-.hlead{max-width:560px;color:var(--text2);font-size:.93rem;line-height:1.85;margin-bottom:2.5rem;font-weight:300}
-.hctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:3rem}
-.btn-warm{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:11px 22px;border-radius:var(--r);font-size:.88rem;border:none;cursor:pointer;font-family:var(--sans);transition:background .2s,transform .15s}
-.btn-warm:hover{background:#a34e2e;transform:translateY(-1px)}
-.btn-warm-out{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--accent3);color:var(--accent);background:none;padding:10px 22px;border-radius:var(--r);font-size:.88rem;cursor:pointer;font-family:var(--sans);transition:.2s}
-.btn-warm-out:hover{background:var(--bg2);transform:translateY(-1px)}
-.hstats{display:flex;flex-wrap:wrap;gap:2.5rem}
-.hstat .num{font-family:var(--serif);font-size:2.2rem;font-style:italic;color:var(--accent);line-height:1}
-.hstat .lbl{font-size:.7rem;font-family:var(--mono);color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+        /* SECTIONS */
+        section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+        .section-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:.5rem}
+        h2.section-title{font-size:2rem;font-weight:500;color:var(--text);margin-bottom:3rem;position:relative;display:inline-block}
+        h2.section-title::after{content:'';display:block;height:2px;width:48px;background:var(--accent);margin-top:8px;border-radius:2px}
 
-.sec{padding:5rem 2rem;max-width:1060px;margin:0 auto;border-top:1px solid var(--rule)}
-.sec-hd{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
-.sec-n{font-family:var(--mono);font-size:.65rem;color:var(--text3);letter-spacing:.15em;background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:3px 8px}
-h2.st{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--text)}
+        /* HERO */
+        #hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;max-width:none;padding-left:2rem;padding-right:2rem}
+        .hero-inner{max-width:1100px;margin:0 auto;width:100%}
+        .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,.12);border:1px solid rgba(108,99,255,.3);border-radius:20px;padding:5px 14px;margin-bottom:1.5rem}
+        .hero-tag span{font-size:12px;color:var(--accent2);font-family:'JetBrains Mono',monospace}
+        .hero-tag .dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 1.8s infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+        h1.hero-name{font-size:clamp(2.4rem,6vw,4.5rem);font-weight:600;line-height:1.1;margin-bottom:.5rem;letter-spacing:-0.02em}
+        h1.hero-name span{background:linear-gradient(135deg,var(--accent2),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-role{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--text2);font-weight:300;margin-bottom:1.5rem}
+        .hero-summary{max-width:620px;color:var(--text2);font-size:.95rem;line-height:1.8;margin-bottom:2.5rem}
+        .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:3rem}
+        .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:11px 24px;border-radius:var(--radius-sm);font-size:.9rem;font-weight:500;text-decoration:none;transition:background .2s,transform .15s}
+        .btn-primary:hover{background:#5750e0;transform:translateY(-1px)}
+        .btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border2);color:var(--text2);padding:11px 24px;border-radius:var(--radius-sm);font-size:.9rem;font-weight:400;text-decoration:none;transition:border-color .2s,color .2s,transform .15s}
+        .btn-ghost:hover{border-color:var(--accent2);color:var(--accent2);transform:translateY(-1px)}
+        .hero-stats{display:flex;flex-wrap:wrap;gap:2rem}
+        .stat{display:flex;flex-direction:column}
+        .stat-num{font-size:2rem;font-weight:600;color:var(--accent2);font-family:'JetBrains Mono',monospace;line-height:1}
+        .stat-label{font-size:.8rem;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
+        .hero-bg-glow{position:fixed;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,.08) 0%,transparent 70%);pointer-events:none;z-index:0}
 
-.about-g{display:grid;grid-template-columns:2fr 1fr;gap:4rem}
-.about-body p{font-size:.93rem;color:var(--text2);margin-bottom:1.1rem;line-height:1.85;font-weight:300}
-.about-body strong{color:var(--text);font-weight:600}
-.about-body blockquote{border-left:3px solid var(--accent3);padding:1rem 1.25rem;background:var(--bg2);border-radius:0 var(--r) var(--r) 0;margin:1.5rem 0;font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--text2)}
-.aside-card{background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);padding:1.5rem}
-.aside-card h4{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem}
-.ci{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:.82rem;color:var(--text2)}
-.ci:last-child{border:none}
-.ci i{color:var(--accent2);width:14px;text-align:center;font-size:12px}
-.ci a{color:var(--text2);text-decoration:none}
-.ci a:hover{color:var(--accent)}
+        /* ABOUT */
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+        .about-text p{color:var(--text2);margin-bottom:1rem;font-size:.95rem}
+        .about-text strong{color:var(--text);font-weight:500}
+        .about-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
+        .about-card h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:1rem;font-weight:500}
+        .info-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+        .info-row:last-child{border:none}
+        .info-row i{color:var(--accent2);width:16px;font-size:13px}
+        .info-row span{font-size:.88rem;color:var(--text2)}
+        .info-row a{color:var(--accent2);text-decoration:none;font-size:.88rem}
+        .info-row a:hover{text-decoration:underline}
 
-.skills-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.sk-card{background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);padding:1.4rem;transition:transform .2s,border-color .2s}
-.sk-card:hover{transform:translateY(-3px);border-color:var(--accent3)}
-.sk-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:.9rem}
-.ic-terracotta{background:rgba(184,92,56,.12);color:var(--accent)}
-.ic-teal{background:rgba(61,122,110,.12);color:var(--teal)}
-.ic-gold{background:rgba(200,150,44,.12);color:var(--gold)}
-.sk-card h3{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em}
-.sk-tags{display:flex;flex-wrap:wrap;gap:5px}
-.sk-tag{background:var(--bg3);border:1px solid var(--rule);border-radius:20px;padding:3px 10px;font-size:.75rem;color:var(--text2);font-family:var(--mono)}
+        /* SKILLS */
+        #skills{background:none}
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+        .skill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:border-color .2s,transform .2s}
+        .skill-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+        .skill-card-header{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem}
+        .skill-icon{width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px}
+        .ic-purple{background:rgba(108,99,255,.15);color:var(--accent2)}
+        .ic-teal{background:rgba(0,212,170,.12);color:var(--teal)}
+        .ic-amber{background:rgba(255,193,77,.12);color:var(--amber)}
+        .ic-coral{background:rgba(255,107,107,.12);color:var(--coral)}
+        .skill-card-header h3{font-size:.9rem;font-weight:500;color:var(--text)}
+        .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+        .tag{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:.78rem;color:var(--text2);font-family:'JetBrains Mono',monospace}
 
-.exp-list{display:flex;flex-direction:column}
-.exp-row{display:grid;grid-template-columns:180px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--rule)}
-.exp-row:last-child{border:none}
-.exp-l .period{font-family:var(--mono);font-size:.7rem;color:var(--text3);line-height:1.7;margin-bottom:.5rem}
-.exp-l .co{font-size:.82rem;color:var(--text2);line-height:1.5}
-.exp-l .tenure{display:inline-block;margin-top:.5rem;font-family:var(--mono);font-size:.65rem;background:var(--bg3);border:1px solid var(--rule);border-radius:4px;padding:3px 8px;color:var(--text3)}
-.exp-r h3{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--text);margin-bottom:.2rem}
-.exp-r .rlabel{font-family:var(--mono);font-size:.72rem;color:var(--accent2);margin-bottom:.9rem}
-.exp-r ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.exp-r ul li{font-size:.87rem;color:var(--text2);padding-left:1.1rem;position:relative;line-height:1.65;font-weight:300}
-.exp-r ul li::before{content:'◆';position:absolute;left:0;color:var(--accent3);font-size:.45rem;top:7px}
+        /* EXPERIENCE */
+        .timeline{position:relative;padding-left:2rem}
+        .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border2)}
+        .timeline-item{position:relative;margin-bottom:3rem;padding-left:1.5rem}
+        .timeline-dot{position:absolute;left:-2rem;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(108,99,255,.2)}
+        .exp-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:border-color .2s}
+        .exp-card:hover{border-color:var(--border2)}
+        .exp-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.75rem}
+        .exp-title{font-size:1.05rem;font-weight:500;color:var(--text)}
+        .exp-badge{font-family:'JetBrains Mono',monospace;font-size:.72rem;background:rgba(108,99,255,.15);color:var(--accent2);border:1px solid rgba(108,99,255,.25);border-radius:20px;padding:4px 12px;white-space:nowrap}
+        .exp-company{font-size:.85rem;color:var(--accent2);margin-bottom:.25rem}
+        .exp-meta{font-size:.8rem;color:var(--text3);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+        .exp-meta i{font-size:11px}
+        .exp-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+        .exp-list li{font-size:.88rem;color:var(--text2);padding-left:1rem;position:relative;line-height:1.6}
+        .exp-list li::before{content:'▸';position:absolute;left:0;color:var(--accent);font-size:.7rem;top:4px}
 
-.edu-g{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.edu-c{background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);padding:1.5rem;position:relative;overflow:hidden}
-.edu-c::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold))}
-.edu-c .yr{font-family:var(--mono);font-size:.68rem;color:var(--text3);letter-spacing:.1em;margin-bottom:.5rem}
-.edu-c h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--text);margin-bottom:.2rem}
-.edu-c .field{font-size:.82rem;color:var(--accent2);margin-bottom:.4rem}
-.edu-c .school{font-size:.78rem;color:var(--text3);line-height:1.5}
-.intern-sec{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--rule)}
-.intern-sec h4{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem}
-.int-item{font-size:.85rem;color:var(--text2);padding:10px 1rem;background:var(--bg2);border-radius:var(--r);margin-bottom:.6rem;border-left:3px solid var(--accent3);font-weight:300}
+        /* EDUCATION */
+        .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+        .edu-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+        .edu-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+        .edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--teal))}
+        .edu-degree{font-size:.95rem;font-weight:500;color:var(--text);margin-bottom:.25rem}
+        .edu-major{font-size:.83rem;color:var(--accent2);margin-bottom:.5rem}
+        .edu-school{font-size:.83rem;color:var(--text2);margin-bottom:.5rem}
+        .edu-year{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--text3)}
+        .internship-section{margin-top:2.5rem}
+        .internship-section h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:1rem;font-weight:500}
+        .intern-list{display:flex;flex-direction:column;gap:.75rem}
+        .intern-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:.85rem;color:var(--text2);display:flex;align-items:flex-start;gap:.75rem}
+        .intern-item i{color:var(--teal);font-size:13px;margin-top:3px;flex-shrink:0}
 
-.proj-g{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.proj-c{background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);padding:1.6rem;transition:border-color .2s,transform .2s}
-.proj-c:hover{border-color:var(--accent3);transform:translateY(-3px)}
-.proj-c .pn{font-family:var(--mono);font-size:.65rem;color:var(--text3);letter-spacing:.12em;margin-bottom:.7rem}
-.proj-c h3{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--text);margin-bottom:.2rem}
-.proj-c .pr{font-size:.78rem;color:var(--text3);margin-bottom:.85rem}
-.proj-c p{font-size:.84rem;color:var(--text2);line-height:1.7;font-weight:300;margin-bottom:1rem}
-.ptags{display:flex;flex-wrap:wrap;gap:5px}
-.ptag{font-family:var(--mono);font-size:.67rem;color:var(--accent2);background:rgba(184,92,56,.07);border:1px solid rgba(184,92,56,.18);border-radius:20px;padding:3px 9px}
+        /* PROJECTS */
+        .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+        .proj-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
+        .proj-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+        .proj-num{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.75rem}
+        .proj-name{font-size:1rem;font-weight:500;color:var(--text);margin-bottom:.4rem}
+        .proj-role{font-size:.8rem;color:var(--text3);margin-bottom:1rem}
+        .proj-desc{font-size:.85rem;color:var(--text2);line-height:1.7;flex:1;margin-bottom:1.25rem}
+        .proj-tech{display:flex;flex-wrap:wrap;gap:6px}
+        .tech-pill{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);border-radius:20px;padding:3px 10px;font-size:.72rem;color:var(--accent2);font-family:'JetBrains Mono',monospace}
 
-.clink{display:flex;align-items:center;gap:12px;color:var(--text2);text-decoration:none;font-size:.9rem;padding:12px 16px;background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);transition:border-color .2s,color .2s,transform .15s}
-.clink:hover{border-color:var(--accent3);color:var(--accent);transform:translateX(4px)}
-.clink i{color:var(--accent2);width:16px;text-align:center;font-size:14px;flex-shrink:0}
+        /* CONTACT */
+        .contact-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+        .contact-text p{color:var(--text2);margin-bottom:1.5rem;font-size:.95rem}
+        .contact-links{display:flex;flex-direction:column;gap:.75rem}
+        .contact-link{display:flex;align-items:center;gap:12px;color:var(--text2);text-decoration:none;padding:14px 18px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.88rem;transition:border-color .2s,color .2s,transform .15s}
+        .contact-link:hover{border-color:var(--accent2);color:var(--text);transform:translateX(4px)}
+        .contact-link i{color:var(--accent2);font-size:15px;width:18px;text-align:center}
+        .contact-form{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
+        .form-group{margin-bottom:1.25rem}
+        .form-group label{display:block;font-size:.8rem;color:var(--text3);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.08em}
+        .form-group input,.form-group textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s}
+        .form-group input:focus,.form-group textarea:focus{border-color:var(--accent2)}
+        .form-group textarea{resize:vertical;min-height:120px}
+        .form-submit{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);padding:12px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .2s,transform .15s}
+        .form-submit:hover{background:#5750e0;transform:translateY(-1px)}
+        #form-msg{text-align:center;margin-top:.75rem;font-size:.85rem;color:var(--teal);display:none}
 
-footer{border-top:1px solid var(--rule);padding:2rem;text-align:center;max-width:1060px;margin:0 auto}
-footer p{font-size:.75rem;color:var(--text3);font-family:var(--mono)}
+        /* FOOTER */
+        footer{border-top:1px solid var(--border);padding:2rem;text-align:center}
+        footer p{font-size:.8rem;color:var(--text3)}
+        footer a{color:var(--accent2);text-decoration:none}
 
-.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
-.fade-up.visible{opacity:1;transform:none}
+        /* SCROLL ANIMATIONS */
+        .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+        .fade-up.visible{opacity:1;transform:none}
 
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:flex}
-  .about-g{grid-template-columns:1fr}
-  .skills-g{grid-template-columns:1fr 1fr}
-  .exp-row{grid-template-columns:1fr}
-  .edu-g,.proj-g{grid-template-columns:1fr}
-  .sec{padding:3.5rem 1.25rem}
-  #hero{padding:100px 1.25rem 60px}
-}
-@media(max-width:480px){.skills-g{grid-template-columns:1fr}}
-</style>
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            .nav-links{display:none}
+            .hamburger{display:flex}
+            .about-grid,.contact-wrapper{grid-template-columns:1fr}
+            h2.section-title{font-size:1.5rem}
+            .hero-stats{gap:1.5rem}
+            section{padding:4rem 1.25rem}
+        }
+    </style>
 </head>
 <body>
 
+<div class="hero-bg-glow"></div>
+
+<!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <span class="nav-logo">Prakash Rajendran</span>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-  </div>
+    <div class="nav-inner">
+        <span class="nav-logo">prakash.rajendran</span>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#skills" onclick="closeMenu()">Skills</a>
-  <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="#education" onclick="closeMenu()">Education</a>
-  <a href="#projects" onclick="closeMenu()">Projects</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#skills" onclick="closeMenu()">Skills</a>
+    <a href="#experience" onclick="closeMenu()">Experience</a>
+    <a href="#education" onclick="closeMenu()">Education</a>
+    <a href="#projects" onclick="closeMenu()">Projects</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
 <!-- HERO -->
-<div id="hero">
-  <div style="width:88px;height:88px;border-radius:50%;overflow:hidden;border:2px solid var(--accent3);margin-bottom:1.5rem">
-    <img src="img/profile.jpg" alt="Prakash Rajendran" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--accent2)\'>PR</div>'"/>
-  </div>
-  <div class="hero-chip"><span class="dot"></span><span>Technical Lead · Available</span></div>
-  <h1 class="hname">Prakash<br><span>Rajendran</span></h1>
-  <p class="hrole">Back End Developer · Java / Spring Boot · AWS · AI-Driven Engineering</p>
-  <p class="hlead">8+ years building high-availability back-end architectures for financial and commodity analytics. Expert in the Java ecosystem with a modern edge in AI-assisted development.</p>
-  <div class="hctas">
-    <button class="btn-warm" onclick="scrollToId('experience')"><i class="fa fa-briefcase" style="font-size:12px"></i> View Experience</button>
-    <button class="btn-warm-out" onclick="scrollToId('contact')"><i class="fa fa-envelope" style="font-size:12px"></i> Get in Touch</button>
-  </div>
-  <div class="hstats">
-    <div class="hstat"><div class="num">8+</div><div class="lbl">Years Exp.</div></div>
-    <div class="hstat"><div class="num">4</div><div class="lbl">Projects</div></div>
-    <div class="hstat"><div class="num">99.9%</div><div class="lbl">Uptime SLA</div></div>
-    <div class="hstat"><div class="num">M.E.</div><div class="lbl">CS Degree</div></div>
-  </div>
-</div>
+<section id="hero">
+    <div class="hero-inner">
+        <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap">
+            <div style="width:80px;height:80px;border-radius:50%;overflow:hidden;border:2px solid rgba(108,99,255,.4);flex-shrink:0">
+                <img src="img/profile.jpg" alt="Prakash Rajendran" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:rgba(108,99,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:600;color:var(--accent2)\'>PR</div>'"/>
+            </div>
+            <div class="hero-tag"><span class="dot"></span><span>Available for new opportunities</span></div>
+        </div>
+        <h1 class="hero-name">Prakash<br><span>Rajendran</span></h1>
+        <p class="hero-role">Technical Lead · Back End Developer</p>
+        <p class="hero-summary">Dynamic Technical Lead with over 8 years of experience designing and deploying high-availability back-end architectures. Expert in the Java/Spring Boot ecosystem with deep knowledge in AWS, ArgoCD, and AI-assisted development.</p>
+        <div class="hero-ctas">
+            <button class="btn-primary" onclick="scrollTo('experience')"><i class="fa fa-briefcase" style="font-size:13px"></i> View Experience</button>
+            <button class="btn-ghost" onclick="scrollTo('contact')"><i class="fa fa-envelope" style="font-size:13px"></i> Get in Touch</button>
+        </div>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Years Experience</span></div>
+            <div class="stat"><span class="stat-num">4</span><span class="stat-label">Major Projects</span></div>
+            <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">Uptime Delivered</span></div>
+            <div class="stat"><span class="stat-num">M.E.</span><span class="stat-label">Computer Science</span></div>
+        </div>
+    </div>
+</section>
 
 <!-- ABOUT -->
-<div class="sec fade-up" id="about">
-  <div class="sec-hd"><span class="sec-n">01</span><h2 class="st">About</h2></div>
-  <div class="about-g">
-    <div class="about-body">
-      <p>I'm a <strong>Technical Lead and Back End Developer</strong> from Coimbatore, Tamil Nadu, with over 8 years of experience building resilient, scalable systems in financial and commodity analytics domains.</p>
-      <blockquote>Committed to delivering high-performance solutions — accelerated by AI-driven development and grounded in engineering excellence.</blockquote>
-      <p>My expertise centers on the <strong>Java/Spring Boot ecosystem</strong>. I've embraced AI tools like <strong>Claude and Cursor</strong> to cut delivery cycles and sharpen code quality. I thrive on translating business complexity into clean, maintainable architecture — and growing the engineers around me.</p>
+<section id="about">
+    <div class="fade-up">
+        <div class="section-label">01 — Who I Am</div>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I'm a <strong>Technical Lead and Back End Developer</strong> based in Coimbatore, Tamil Nadu, India, with over 8 years of hands-on experience building resilient, high-performance systems in the financial and commodity analytics domains.</p>
+                <p>My expertise centers around the <strong>Java/Spring Boot ecosystem</strong>, and I've progressively adopted AI-driven development tools like Claude and Cursor to accelerate delivery cycles and reduce technical debt.</p>
+                <p>I thrive at the intersection of <strong>architecture, mentorship, and execution</strong> — translating complex business requirements into scalable technical solutions, leading cross-functional teams, and upholding rigorous quality standards across the entire SDLC.</p>
+                <p>When I'm not architecting microservices, I'm exploring emerging cloud-native patterns and mentoring junior engineers to grow in their craft.</p>
+            </div>
+            <div class="about-card">
+                <h4>Contact Info</h4>
+                <div class="info-row"><i class="fa fa-envelope"></i><a href="mailto:prakashcse@outlook.com">prakashcse@outlook.com</a></div>
+                <div class="info-row"><i class="fa fa-phone"></i><span>+91 75029 58603</span></div>
+                <div class="info-row"><i class="fa fa-location-dot"></i><span>Coimbatore, Tamil Nadu, India</span></div>
+                <div class="info-row"><i class="fa fa-globe"></i><a href="https://rajendranprakash.github.io/" target="_blank">rajendranprakash.github.io</a></div>
+                <div class="info-row"><i class="fab fa-github"></i><a href="https://github.com/RajendranPrakash" target="_blank">github.com/RajendranPrakash</a></div>
+                <div class="info-row"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/prakashrajendran" target="_blank">linkedin.com/in/prakashrajendran</a></div>
+                <div class="info-row"><i class="fab fa-medium"></i><a href="https://medium.com/@prakashcse" target="_blank">medium.com/@prakashcse</a></div>
+
+                <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)">
+                    <div style="font-size:.75rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Current Role</div>
+                    <div style="font-size:.9rem;color:var(--text);font-weight:500">Technical Lead</div>
+                    <div style="font-size:.8rem;color:var(--text2);margin-top:2px">Cognizant · May 2025 – Present</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="aside-card">
-      <h4>Contact</h4>
-      <div class="ci"><i class="fa fa-envelope"></i><a href="mailto:prakashcse@outlook.com">prakashcse@outlook.com</a></div>
-      <div class="ci"><i class="fa fa-phone"></i><span>+91 75029 58603</span></div>
-      <div class="ci"><i class="fa fa-location-dot"></i><span>Coimbatore, India</span></div>
-      <div class="ci"><i class="fa fa-globe"></i><a href="https://rajendranprakash.github.io/" target="_blank">rajendranprakash.github.io</a></div>
-      <div class="ci"><i class="fab fa-github"></i><a href="https://github.com/RajendranPrakash" target="_blank">github.com/RajendranPrakash</a></div>
-      <div class="ci"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/prakashrajendran" target="_blank">linkedin.com/in/prakashrajendran</a></div>
-      <div class="ci"><i class="fab fa-medium"></i><a href="https://medium.com/@prakashcse" target="_blank">medium.com/@prakashcse</a></div>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- SKILLS -->
-<div class="sec fade-up" id="skills">
-  <div class="sec-hd"><span class="sec-n">02</span><h2 class="st">Skills</h2></div>
-  <div class="skills-g">
-    <div class="sk-card"><div class="sk-icon ic-terracotta"><i class="fa fa-code"></i></div><h3>Core Dev</h3><div class="sk-tags"><span class="sk-tag">Java 21</span><span class="sk-tag">Spring Boot</span><span class="sk-tag">Spring MVC</span><span class="sk-tag">Spring AOP</span><span class="sk-tag">Hibernate</span></div></div>
-    <div class="sk-card"><div class="sk-icon ic-teal"><i class="fa fa-robot"></i></div><h3>AI Engineering</h3><div class="sk-tags"><span class="sk-tag">Claude</span><span class="sk-tag">Cursor AI</span><span class="sk-tag">GitHub Copilot</span></div></div>
-    <div class="sk-card"><div class="sk-icon ic-gold"><i class="fa fa-database"></i></div><h3>Databases</h3><div class="sk-tags"><span class="sk-tag">MongoDB</span><span class="sk-tag">MSSQL</span><span class="sk-tag">Redis</span><span class="sk-tag">Oracle</span></div></div>
-    <div class="sk-card"><div class="sk-icon ic-terracotta"><i class="fa fa-network-wired"></i></div><h3>APIs & Messaging</h3><div class="sk-tags"><span class="sk-tag">REST</span><span class="sk-tag">SOAP</span><span class="sk-tag">Active MQ</span><span class="sk-tag">XML/XSLT</span></div></div>
-    <div class="sk-card"><div class="sk-icon ic-teal"><i class="fab fa-aws"></i></div><h3>DevOps & Cloud</h3><div class="sk-tags"><span class="sk-tag">AWS</span><span class="sk-tag">Docker</span><span class="sk-tag">ArgoCD</span><span class="sk-tag">Jenkins</span><span class="sk-tag">Git</span></div></div>
-    <div class="sk-card"><div class="sk-icon ic-gold"><i class="fa fa-vial"></i></div><h3>Testing & Frontend</h3><div class="sk-tags"><span class="sk-tag">JUnit</span><span class="sk-tag">Mockito</span><span class="sk-tag">HTML5</span><span class="sk-tag">JavaScript</span><span class="sk-tag">jQuery</span></div></div>
-  </div>
-</div>
+<section id="skills" style="padding-top:0">
+    <div class="fade-up">
+        <div class="section-label">02 — What I Work With</div>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon ic-purple"><i class="fa fa-code"></i></div>
+                    <h3>Core Development</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="tag">Java 21</span><span class="tag">Spring Boot</span><span class="tag">Spring MVC</span><span class="tag">Spring AOP</span><span class="tag">Hibernate</span><span class="tag">Struts</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon ic-teal"><i class="fa fa-robot"></i></div>
+                    <h3>AI-Enhanced Engineering</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="tag">Claude</span><span class="tag">Cursor AI</span><span class="tag">GitHub Copilot</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon ic-amber"><i class="fa fa-database"></i></div>
+                    <h3>Databases</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="tag">MongoDB</span><span class="tag">MSSQL</span><span class="tag">Redis</span><span class="tag">Oracle</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon ic-coral"><i class="fa fa-network-wired"></i></div>
+                    <h3>Web Services & Messaging</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="tag">RESTful APIs</span><span class="tag">SOAP</span><span class="tag">Active MQ</span><span class="tag">JSON</span><span class="tag">XML/XSLT</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon ic-teal"><i class="fab fa-aws"></i></div>
+                    <h3>DevOps & Cloud</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">ArgoCD</span><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">Bitbucket</span><span class="tag">Maven</span><span class="tag">Gradle</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon ic-purple"><i class="fa fa-vial"></i></div>
+                    <h3>Testing & Front-End</h3>
+                </div>
+                <div class="skill-tags">
+                    <span class="tag">JUnit</span><span class="tag">Mockito</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">jQuery</span><span class="tag">ExtJS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- EXPERIENCE -->
-<div class="sec fade-up" id="experience">
-  <div class="sec-hd"><span class="sec-n">03</span><h2 class="st">Experience</h2></div>
-  <div class="exp-list">
-    <div class="exp-row">
-      <div class="exp-l"><div class="period">May 2025<br>Present</div><div class="co">Cognizant<br>Coimbatore, TN</div><span class="tenure">Current</span></div>
-      <div class="exp-r"><h3>Payment Partner Management</h3><div class="rlabel">Technical Lead — Backend Developer</div><ul><li>Java 11 → Java 21 migration, leveraging modern JVM features and AI-assisted refactoring.</li><li>Built a high-fidelity Vendor Simulator reducing external environment dependencies.</li><li>Managing CD pipelines via ArgoCD, Jenkins, and DevPortal on AWS microservices.</li><li>Driving end-to-end delivery from design through production readiness.</li></ul></div>
+<section id="experience" style="padding-top:0">
+    <div class="fade-up">
+        <div class="section-label">03 — Where I've Worked</div>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Payment Partner Management</div>
+                            <div class="exp-company">Cognizant · Coimbatore, Tamil Nadu</div>
+                            <div class="exp-meta"><i class="far fa-calendar"></i> May 2025 – Present &nbsp;·&nbsp; Technical Lead</div>
+                        </div>
+                        <span class="exp-badge">Current</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Leading migration of core payment modules from Java 11 to Java 21, optimizing performance and leveraging modern JVM features.</li>
+                        <li>Utilizing Claude and Cursor to streamline complex refactoring, automate unit test generation, and reduce technical debt.</li>
+                        <li>Engineered a high-fidelity Vendor Simulator for seamless integration testing with external payment partners.</li>
+                        <li>Managing continuous delivery pipelines using ArgoCD, Jenkins, and DevPortal within an AWS microservices architecture.</li>
+                        <li>Driving end-to-end development from initial design through integration testing and production readiness.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--teal)"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Commodity Analytics Platform</div>
+                            <div class="exp-company">Eka Software Solutions · Bengaluru, Karnataka</div>
+                            <div class="exp-meta"><i class="far fa-calendar"></i> Aug 2020 – Mar 2025 &nbsp;·&nbsp; Senior Software Engineer</div>
+                        </div>
+                        <span class="exp-badge" style="color:var(--teal);background:rgba(0,212,170,.1);border-color:rgba(0,212,170,.25)">4.5 yrs</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Contributed to full SDLC of a high-concurrency commodity trading platform, ensuring 99.9% uptime for analytics services.</li>
+                        <li>Established backend coding standards and conducted rigorous peer reviews to ensure maintainable, high-quality code.</li>
+                        <li>Collaborated with Product Managers to translate complex business logic into scalable technical specifications.</li>
+                        <li>Acted as technical mentor for junior developers, improving overall team velocity and proficiency.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--amber)"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Indiana Farm Bureau Insurance (IFBI)</div>
+                            <div class="exp-company">Ebix Software Solution · Coimbatore, Tamil Nadu</div>
+                            <div class="exp-meta"><i class="far fa-calendar"></i> Aug 2019 – Aug 2020 &nbsp;·&nbsp; Software Engineer</div>
+                        </div>
+                        <span class="exp-badge" style="color:var(--amber);background:rgba(255,193,77,.1);border-color:rgba(255,193,77,.25)">1 yr</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Played a key role in migration from Struts to Spring, improving system modularity and API performance.</li>
+                        <li>Designed and managed system interfaces using XML, XSLT, and XSD schemas for standardized data exchange.</li>
+                        <li>Tracked and resolved high-priority defects using JIRA and BugZero, maintaining strict UAT release schedules.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background:var(--coral)"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">American Family Insurance (AmFam)</div>
+                            <div class="exp-company">Ebix Software Solution · Coimbatore, Tamil Nadu</div>
+                            <div class="exp-meta"><i class="far fa-calendar"></i> Nov 2017 – Aug 2019 &nbsp;·&nbsp; Software Engineer</div>
+                        </div>
+                        <span class="exp-badge" style="color:var(--coral);background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.25)">1.75 yrs</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Developed specialized bundles for System Interfaces to facilitate third-party service connections.</li>
+                        <li>Optimized complex SQL queries for high-volume reporting, reducing data retrieval times for business users.</li>
+                        <li>Managed the release lifecycle, providing timely bug status updates and ensuring quality code hand-offs to QA.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="exp-row">
-      <div class="exp-l"><div class="period">Aug 2020<br>Mar 2025</div><div class="co">Eka Software Solutions<br>Bengaluru, KA</div><span class="tenure">4.5 yrs</span></div>
-      <div class="exp-r"><h3>Commodity Analytics Platform</h3><div class="rlabel">Senior Software Engineer — Backend Developer</div><ul><li>Full SDLC of a high-concurrency commodity trading platform, 99.9% uptime SLA.</li><li>Established backend coding standards and conducted rigorous peer reviews.</li><li>Mentored junior developers, improving team velocity and technical proficiency.</li></ul></div>
-    </div>
-    <div class="exp-row">
-      <div class="exp-l"><div class="period">Aug 2019<br>Aug 2020</div><div class="co">Ebix Software<br>Coimbatore, TN</div><span class="tenure">1 yr</span></div>
-      <div class="exp-r"><h3>Indiana Farm Bureau Insurance</h3><div class="rlabel">Software Engineer — Backend Developer</div><ul><li>Struts-to-Spring migration improving system modularity and API performance.</li><li>Designed XML/XSLT/XSD system interfaces for standardized vendor data exchange.</li><li>Resolved high-priority defects using JIRA and BugZero for UAT releases.</li></ul></div>
-    </div>
-    <div class="exp-row">
-      <div class="exp-l"><div class="period">Nov 2017<br>Aug 2019</div><div class="co">Ebix Software<br>Coimbatore, TN</div><span class="tenure">1.75 yrs</span></div>
-      <div class="exp-r"><h3>American Family Insurance</h3><div class="rlabel">Software Engineer — Backend Developer</div><ul><li>Developed third-party integration bundles for external service connections.</li><li>Optimized high-volume SQL queries, reducing data retrieval times significantly.</li><li>Managed release lifecycle with quality QA hand-offs.</li></ul></div>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- EDUCATION -->
-<div class="sec fade-up" id="education">
-  <div class="sec-hd"><span class="sec-n">04</span><h2 class="st">Education</h2></div>
-  <div class="edu-g">
-    <div class="edu-c"><div class="yr">2014 – 2016</div><h3>Master of Engineering</h3><div class="field">Computer Science & Engineering</div><div class="school">Sri Krishna College of Engineering and Technology, Coimbatore</div></div>
-    <div class="edu-c"><div class="yr">2010 – 2014</div><h3>Bachelor of Engineering</h3><div class="field">Computer Science & Engineering</div><div class="school">Sri Krishna College of Technology, Coimbatore</div></div>
-  </div>
-  <div class="intern-sec">
-    <h4>Internship Trainings</h4>
-    <div class="int-item">Development training in <strong>Java</strong> — Full Creative, Chennai, Tamil Nadu.</div>
-    <div class="int-item">Training on <strong>Real Time Mobile & Web Based Field Data Acquisition Systems</strong> — Hetrogenous Communication Technologies, Chennai.</div>
-  </div>
-</div>
+<section id="education" style="padding-top:0">
+    <div class="fade-up">
+        <div class="section-label">04 — Academic Background</div>
+        <h2 class="section-title">Education</h2>
+        <div class="edu-grid">
+            <div class="edu-card">
+                <div class="edu-degree">Master of Engineering</div>
+                <div class="edu-major">Computer Science & Engineering</div>
+                <div class="edu-school">Sri Krishna College of Engineering and Technology, Coimbatore</div>
+                <div class="edu-year">2014 – 2016</div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-degree">Bachelor of Engineering</div>
+                <div class="edu-major">Computer Science & Engineering</div>
+                <div class="edu-school">Sri Krishna College of Technology, Coimbatore</div>
+                <div class="edu-year">2010 – 2014</div>
+            </div>
+        </div>
+        <div class="internship-section">
+            <h3>Internship Trainings</h3>
+            <div class="intern-list">
+                <div class="intern-item"><i class="fa fa-graduation-cap"></i><span>Development training in <strong style="color:var(--text)">Java</strong> at Full Creative, Chennai, Tamil Nadu.</span></div>
+                <div class="intern-item"><i class="fa fa-graduation-cap"></i><span>Training on <strong style="color:var(--text)">Real Time Mobile & Web Based Field Data Acquisition Systems</strong> at Hetrogenous Communication Technologies, Chennai, Tamil Nadu.</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- PROJECTS -->
-<div class="sec fade-up" id="projects">
-  <div class="sec-hd"><span class="sec-n">05</span><h2 class="st">Projects</h2></div>
-  <div class="proj-g">
-    <div class="proj-c"><div class="pn">01 · 2025 – Present</div><h3>Payment Partner Management</h3><div class="pr">Technical Lead · Cognizant</div><p>Java 21 modernization with AI-assisted refactoring and a Vendor Simulator for seamless partner integration on AWS.</p><div class="ptags"><span class="ptag">Java 21</span><span class="ptag">Spring Boot</span><span class="ptag">ArgoCD</span><span class="ptag">AWS</span><span class="ptag">Claude</span></div></div>
-    <div class="proj-c"><div class="pn">02 · 2020 – 2025</div><h3>Commodity Analytics Platform</h3><div class="pr">Sr. Software Engineer · Eka Software</div><p>High-concurrency trading platform with 99.9% uptime, rigorous code standards, and team mentorship across the SDLC.</p><div class="ptags"><span class="ptag">Java</span><span class="ptag">Spring Boot</span><span class="ptag">MongoDB</span><span class="ptag">Redis</span><span class="ptag">Docker</span></div></div>
-    <div class="proj-c"><div class="pn">03 · 2019 – 2020</div><h3>Indiana Farm Bureau Insurance</h3><div class="pr">Software Engineer · Ebix Software</div><p>Struts-to-Spring modernization with XML/XSLT interface design and strict UAT release management.</p><div class="ptags"><span class="ptag">Spring MVC</span><span class="ptag">XML/XSLT</span><span class="ptag">MSSQL</span><span class="ptag">JIRA</span></div></div>
-    <div class="proj-c"><div class="pn">04 · 2017 – 2019</div><h3>American Family Insurance</h3><div class="pr">Software Engineer · Ebix Software</div><p>Third-party integration bundles and high-volume SQL optimization with full release lifecycle management.</p><div class="ptags"><span class="ptag">Java</span><span class="ptag">REST</span><span class="ptag">SOAP</span><span class="ptag">SQL</span><span class="ptag">Active MQ</span></div></div>
-  </div>
-</div>
+<!-- PROJECTS HIGHLIGHT -->
+<section id="projects" style="padding-top:0">
+    <div class="fade-up">
+        <div class="section-label">05 — Featured Work</div>
+        <h2 class="section-title">Key Projects</h2>
+        <div class="projects-grid">
+            <div class="proj-card">
+                <div class="proj-num">01 · 2025 – Present</div>
+                <div class="proj-name">Payment Partner Management</div>
+                <div class="proj-role">Technical Lead · Cognizant</div>
+                <p class="proj-desc">Java 21 migration of core payment modules with AI-assisted refactoring. Includes a Vendor Simulator for integration testing and full CD pipeline management on AWS.</p>
+                <div class="proj-tech"><span class="tech-pill">Java 21</span><span class="tech-pill">Spring Boot</span><span class="tech-pill">ArgoCD</span><span class="tech-pill">AWS</span><span class="tech-pill">Claude AI</span></div>
+            </div>
+            <div class="proj-card">
+                <div class="proj-num">02 · 2020 – 2025</div>
+                <div class="proj-name">Commodity Analytics Platform</div>
+                <div class="proj-role">Senior Software Engineer · Eka Software</div>
+                <p class="proj-desc">High-concurrency commodity trading platform with 99.9% uptime SLA. Led backend standards, peer reviews, and mentorship across the full SDLC.</p>
+                <div class="proj-tech"><span class="tech-pill">Java</span><span class="tech-pill">Spring Boot</span><span class="tech-pill">MongoDB</span><span class="tech-pill">Redis</span><span class="tech-pill">Docker</span></div>
+            </div>
+            <div class="proj-card">
+                <div class="proj-num">03 · 2019 – 2020</div>
+                <div class="proj-name">Indiana Farm Bureau Insurance</div>
+                <div class="proj-role">Software Engineer · Ebix Software</div>
+                <p class="proj-desc">Struts-to-Spring modernization improving system modularity. Designed XML/XSLT/XSD interfaces for standardized vendor data exchange and UAT management.</p>
+                <div class="proj-tech"><span class="tech-pill">Spring MVC</span><span class="tech-pill">XML/XSLT</span><span class="tech-pill">JIRA</span><span class="tech-pill">MSSQL</span></div>
+            </div>
+            <div class="proj-card">
+                <div class="proj-num">04 · 2017 – 2019</div>
+                <div class="proj-name">American Family Insurance</div>
+                <div class="proj-role">Software Engineer · Ebix Software</div>
+                <p class="proj-desc">Developed third-party integration bundles and optimized high-volume SQL queries for business reporting. Managed full release lifecycle with QA hand-offs.</p>
+                <div class="proj-tech"><span class="tech-pill">Java</span><span class="tech-pill">RESTful APIs</span><span class="tech-pill">SOAP</span><span class="tech-pill">SQL</span><span class="tech-pill">Active MQ</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- CONTACT -->
-<div class="sec fade-up" id="contact">
-  <div class="sec-hd"><span class="sec-n">06</span><h2 class="st">Contact</h2></div>
-  <p style="font-size:.93rem;color:var(--text2);line-height:1.85;margin-bottom:2rem;max-width:560px;font-weight:300">Open to new opportunities, interesting projects, or simply connecting with fellow engineers. Reach out through any channel below.</p>
-  <div style="display:flex;flex-direction:column;gap:.6rem;max-width:460px">
-    <a href="mailto:prakashcse@outlook.com" class="clink"><i class="fa fa-envelope"></i>prakashcse@outlook.com</a>
-    <a href="tel:+917502958603" class="clink"><i class="fa fa-phone"></i>+91 75029 58603</a>
-    <a href="https://rajendranprakash.github.io/" target="_blank" class="clink"><i class="fa fa-globe"></i>rajendranprakash.github.io</a>
-    <a href="https://linkedin.com/in/prakashrajendran" target="_blank" class="clink"><i class="fab fa-linkedin"></i>LinkedIn</a>
-    <a href="https://github.com/RajendranPrakash" target="_blank" class="clink"><i class="fab fa-github"></i>GitHub</a>
-    <a href="https://medium.com/@prakashcse" target="_blank" class="clink"><i class="fab fa-medium"></i>Medium</a>
-  </div>
-</div>
+<section id="contact" style="padding-top:0;padding-bottom:4rem">
+    <div class="fade-up">
+        <div class="section-label">06 — Let's Connect</div>
+        <h2 class="section-title">Get in Touch</h2>
+        <div>
+            <div>
+                <div class="contact-text">
+                    <p>Whether you have a project in mind, an opportunity to discuss, or just want to say hi — I'm always open to connecting with fellow engineers and leaders.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:prakashcse@outlook.com" class="contact-link"><i class="fa fa-envelope"></i> prakashcse@outlook.com</a>
+                    <a href="tel:+917502958603" class="contact-link"><i class="fa fa-phone"></i> +91 75029 58603</a>
+                    <a href="https://rajendranprakash.github.io/" target="_blank" class="contact-link"><i class="fa fa-globe"></i> rajendranprakash.github.io</a>
+                    <a href="https://linkedin.com/in/prakashrajendran" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/RajendranPrakash" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://medium.com/@prakashcse" target="_blank" class="contact-link"><i class="fab fa-medium"></i> Medium</a>
 
-<footer><p>Prakash Rajendran · Coimbatore, India · 2025</p></footer>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Designed & developed by <a href="#hero">Prakash Rajendran</a> &nbsp;·&nbsp; Coimbatore, India &nbsp;·&nbsp; 2025</p>
+</footer>
 
 <script>
-function scrollToId(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+    function scrollTo(id){
+        const el=document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+    function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+    function handleSubmit(){
+        const n=document.getElementById('fname').value.trim();
+        const e=document.getElementById('femail').value.trim();
+        const m=document.getElementById('fmsg').value.trim();
+        if(!n||!e||!m){alert('Please fill in all fields.');return;}
+        const msg=document.getElementById('form-msg');
+        msg.style.display='block';
+        document.getElementById('fname').value='';
+        document.getElementById('femail').value='';
+        document.getElementById('fmsg').value='';
+        setTimeout(()=>msg.style.display='none',4000);
+    }
+
+    const observer=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+    },{threshold:.1});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
